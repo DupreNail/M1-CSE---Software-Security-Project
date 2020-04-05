@@ -1,0 +1,6 @@
+
+#ifndef HEADERS
+# define HEADERS
+long long               step1(char **argv);
+
+#endif /* !HEADERS */
