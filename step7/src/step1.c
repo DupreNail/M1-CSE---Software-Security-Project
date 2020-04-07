@@ -115,7 +115,7 @@ long step1(char *execName, char *functionName, char **pid) {
   command = malloc(sizeof(char) * (strlen(execName) + strlen("pgrep ") + 1));                  //we free then malloc everytime we change our command, to make sure our size is the right one
   getPID(fp, buffer, command, execName);                                                       //We get the pid of our tracee 
   *pid = strdup(buffer);                                                                       //strdup once again to make sure that strtok will not impact our result
-  command = malloc(sizeof(char) * (strlen("cat /proc//maps") + strlen(*pid) + 1));             
+  command = malloc(sizeof(char) * (strlen("cat /proc//maps") + strlen(*pid) + 1));
   traceeFuncAddr = getAddrFunc(*pid, command, fp, buffer, temp);                               //We compute the address of f1 functionName (f1) in execName(tracee)
   free(command);
   free(functionAddr);

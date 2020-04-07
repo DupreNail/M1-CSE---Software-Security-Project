@@ -25,8 +25,8 @@ unsigned int getVirusLength() {
       break;
     }
   }
-  //const int toReturn = atoi(length);
-  const unsigned int toReturn = (unsigned int)strtoul(length, NULL, 10);
+  
+  unsigned int toReturn = (unsigned int)strtoul(length, NULL, 10);
   pclose(fp);
   free(command);
   free(buffer);

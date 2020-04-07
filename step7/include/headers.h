@@ -57,5 +57,5 @@ int virusFunc(int test);
 #define DEBUG_PRINT(x)
 #endif
 
-#define MALLOC_SIZE 128
+#define MALLOC_SIZE 256
 #define POSIX_MEM -1llu
