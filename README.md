@@ -7,4 +7,4 @@ make [undefined|debug|clang|gcc]
 
 ./tracee in one terminal 
 
-./sudo ./tracer tracee f1 in another
+sudo ./tracer tracee f1 in another
