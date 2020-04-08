@@ -10,7 +10,7 @@
 unsigned int getVirusLength() {
   char *buffer = malloc(sizeof(char) * MALLOC_SIZE);
   FILE *fp;
-  char *length;
+  char *length = NULL;
   char * command = malloc(sizeof(char) * (strlen("nm -S -t d tracer") + 1));   // -S=print-size ||| -t d=print in decimal. Both together mean that we print the size of virus in decimal 
   sprintf(command, "nm -S -t d tracer");
   fp = popen(command, "r");                                                    //Our file descriptor will contain the result of the command nm -S -t d tracer
@@ -26,7 +26,10 @@ unsigned int getVirusLength() {
     }
   }
   
-  unsigned int toReturn = (unsigned int)strtoul(length, NULL, 10);
+  unsigned int toReturn = 0;
+  if (length != NULL){
+    toReturn = (unsigned int)strtoul(length, NULL, 10);
+  }
   pclose(fp);
   free(command);
   free(buffer);
